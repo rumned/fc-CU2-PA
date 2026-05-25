@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.app h1 {
+    text-align: center;
+    font-size: 2.2em;
+    margin: 30px 0;
+    letter-spacing: 1px;
+    color: #1a1a2e;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.filters input,
+.filters select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    background: #fff;
+}
+
+.filters input {
+    min-width: 200px;
+}
+
+.filters input:focus,
+.filters select:focus {
+    outline: none;
+    border-color: #4a90d9;
+    box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.card-genre,
+.card-platform,
+.card-year {
+    font-size: 1em;
+}
+
+/* INSTRUCTION: Add a .card-image class that:
+  - takes full width of the card
+  - uses a 16:9 aspect ratio so all images display at the same height
+  - uses object-fit to cover the area without distortion
+*/
+
+/* INSTRUCTION: Add responsive design for smaller screens:
+  - tablet (992px and below): 2 cards per row
+  - mobile (768px and below): 1 card per row
+*/
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* tablet: 2 cards per row */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile: 1 card per row */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
